@@ -1,4 +1,4 @@
-package droid.maxaria.maxander.movietest.data.retrofit
+package droid.maxaria.maxander.movietest.data.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

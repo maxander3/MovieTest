@@ -1,4 +1,4 @@
-package droid.maxaria.maxander.movietest.data.retrofit
+package droid.maxaria.maxander.movietest.data.network
 
 import droid.maxaria.maxander.movietest.data.model.MovieObject
 import retrofit2.Response
