@@ -12,7 +12,7 @@ class ApiProvider() {
 
     fun movieObject(): MovieApi = retrofit.create(MovieApi::class.java)
 
-    companion object{
+    companion object {
         private const val BASE_URL = "https://raw.githubusercontent.com/"
     }
 }

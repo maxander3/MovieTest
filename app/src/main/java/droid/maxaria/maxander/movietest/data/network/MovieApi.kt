@@ -5,12 +5,13 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 
-interface MovieApi  {
+interface MovieApi {
 
     @GET(PARAMETERS_URL)
-    suspend fun getMovieList():Response<MovieObject>
+    suspend fun getMovieList(): Response<MovieObject>
 
-    companion object{
-        private const val PARAMETERS_URL = "constanta-android-dev/intership-wellcome-task/main/films.json"
+    companion object {
+        private const val PARAMETERS_URL =
+            "constanta-android-dev/intership-wellcome-task/main/films.json"
     }
 }

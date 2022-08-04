@@ -5,28 +5,43 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import droid.maxaria.maxander.movietest.R
 import droid.maxaria.maxander.movietest.databinding.ItemMovieBinding
 import droid.maxaria.maxander.movietest.domain.model.MovieModel
 
-class MovieAdapter: ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieDiffUtil) {
+class MovieAdapter : ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieDiffUtil) {
+
+    var onMovieItemClickListener: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         return MovieViewHolder(ItemMovieBinding.inflate(
-            LayoutInflater.from(parent.context),parent,false)
+            LayoutInflater.from(parent.context), parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+            onMovieItemClickListener?.invoke(getItem(position).movieName)
+        }
         //TODO обработчик нажатий отредактировать вывод
         holder.apply {
             title.text = getItem(position).movieName
-            year.text = getItem(position).movieReleaseYear.toString()
-            director.text = getItem(position).movieDirectorName
-            actors.text = getItem(position).actorsOfMovie.toString()
+            year.text = String.format(
+                itemView.context.getString(R.string.movie_year),
+                getItem(position).movieReleaseYear
+            )
+            director.text = String.format(
+                itemView.context.getString(R.string.director_name),
+                getItem(position).movieDirectorName
+            )
+            actors.text = String.format(
+                itemView.context.getString(R.string.actors_name),
+                getItem(position).actorsOfMovie.joinToString()
+            )
         }
     }
 
-    inner class MovieViewHolder(binding: ItemMovieBinding):RecyclerView.ViewHolder(binding.root){
+    inner class MovieViewHolder(binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         val title = binding.movieTitleTv
         val year = binding.movieYearTv
         val director = binding.directorNameTv
@@ -34,10 +49,11 @@ class MovieAdapter: ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieD
     }
 
 }
-private val movieDiffUtil = object:DiffUtil.ItemCallback<MovieModel>(){
+
+private val movieDiffUtil = object : DiffUtil.ItemCallback<MovieModel>() {
     override fun areItemsTheSame(oldItem: MovieModel, newItem: MovieModel): Boolean {
-        return ((oldItem.actorsOfMovie == newItem.actorsOfMovie)&&(oldItem.movieDirectorName == newItem.movieDirectorName)
-                && (oldItem.movieReleaseYear == newItem.movieReleaseYear)&&(oldItem.movieName == newItem.movieName))
+        return ((oldItem.actorsOfMovie == newItem.actorsOfMovie) && (oldItem.movieDirectorName == newItem.movieDirectorName)
+                && (oldItem.movieReleaseYear == newItem.movieReleaseYear) && (oldItem.movieName == newItem.movieName))
     }
 
     override fun areContentsTheSame(oldItem: MovieModel, newItem: MovieModel): Boolean {

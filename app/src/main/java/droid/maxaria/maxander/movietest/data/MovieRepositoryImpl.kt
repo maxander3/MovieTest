@@ -14,14 +14,20 @@ class MovieRepositoryImpl(private val apiProvider: ApiProvider) : MovieRepositor
             throw RuntimeException("123")
         }
     }
+
     private fun sortMovieListByYear(movieList: List<MovieModel>): List<MovieModel> {
-        return movieList.sortedBy{ it.movieReleaseYear }.reversed()
+        return movieList.sortedBy { it.movieReleaseYear }.reversed()
     }
+
     private fun checkDuplicate(movieList: List<MovieModel>): List<MovieModel>? {
         for (item in movieList) {
             item.actorsOfMovie.distinct()
         }
         return movieList
+    }
+
+    private fun parseDirectorName() {
+
     }
 
 }

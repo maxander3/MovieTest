@@ -15,11 +15,11 @@ class MovieListViewModel : ViewModel() {
     private val repositoryImpl = MovieRepositoryImpl(apiProvider)
 
     private var _movieList = MutableLiveData<List<MovieModel>>()
-    val movieList:LiveData<List<MovieModel>>
+    val movieList: LiveData<List<MovieModel>>
         get() = _movieList
 
     private var _error = MutableLiveData<Unit>()
-    val error:LiveData<Unit>
+    val error: LiveData<Unit>
         get() = _error
 
     fun loadMovieList() {
