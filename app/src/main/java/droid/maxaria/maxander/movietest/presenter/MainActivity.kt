@@ -1,7 +1,8 @@
-package droid.maxaria.maxander.movietest
+package droid.maxaria.maxander.movietest.presenter
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import droid.maxaria.maxander.movietest.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
