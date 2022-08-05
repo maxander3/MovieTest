@@ -4,15 +4,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import droid.maxaria.maxander.movietest.data.MovieRepositoryImpl
 import droid.maxaria.maxander.movietest.data.network.ApiProvider
+import droid.maxaria.maxander.movietest.domain.MovieRepository
 import droid.maxaria.maxander.movietest.domain.model.MovieModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieListViewModel : ViewModel() {
-    // TODO: DI
-    private val apiProvider = ApiProvider()
-    private val repositoryImpl = MovieRepositoryImpl(apiProvider)
+@HiltViewModel
+class MovieListViewModel @Inject constructor(
+    private val repository: MovieRepository
+) : ViewModel() {
+
 
     private var _movieList = MutableLiveData<List<MovieModel>>()
     val movieList: LiveData<List<MovieModel>>
@@ -25,11 +29,14 @@ class MovieListViewModel : ViewModel() {
     fun loadMovieList() {
         viewModelScope.launch {
             try {
-                val movieList = repositoryImpl.getMovieList()
-                _movieList.postValue((movieList))
+                val movieList = repository.getMovieList()
+                _movieList.postValue(sortMovieListByYear(movieList))
             } catch (e: Exception) {
                 _error.postValue(Unit)
             }
         }
+    }
+    private fun sortMovieListByYear(movieList: List<MovieModel>): List<MovieModel> {
+        return movieList.sortedBy { it.movieReleaseYear }.reversed()
     }
 }

@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import droid.maxaria.maxander.movietest.R
 import droid.maxaria.maxander.movietest.databinding.FragmentListBinding
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MovieListFragment : Fragment() {
 
     private var _binding: FragmentListBinding? = null
@@ -18,14 +21,13 @@ class MovieListFragment : Fragment() {
         get() = _binding!!
     private val viewModel: MovieListViewModel by viewModels()
 
-    private lateinit var adapter: MovieAdapter
+    @Inject lateinit var adapter: MovieAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentListBinding.inflate(inflater)
-        adapter = MovieAdapter()
         adapter.onMovieItemClickListener = {
             makeAlertDialog(it)
         }

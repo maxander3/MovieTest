@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import droid.maxaria.maxander.movietest.R
 import droid.maxaria.maxander.movietest.databinding.ItemMovieBinding
 import droid.maxaria.maxander.movietest.domain.model.MovieModel
+import javax.inject.Inject
 
-class MovieAdapter : ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieDiffUtil) {
+class MovieAdapter @Inject constructor() : ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieDiffUtil) {
 
     var onMovieItemClickListener: ((String) -> Unit)? = null
 

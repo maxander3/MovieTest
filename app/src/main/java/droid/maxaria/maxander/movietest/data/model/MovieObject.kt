@@ -8,9 +8,9 @@ data class MovieObject(
 ) {
     data class Item(
         @SerializedName("actors")
-        val actors: List<Actor>,
+        var actors: List<Actor>,
         @SerializedName("directorName")
-        val directorName: String,
+        var directorName: String,
         @SerializedName("releaseYear")
         val releaseYear: Int,
         @SerializedName("title")

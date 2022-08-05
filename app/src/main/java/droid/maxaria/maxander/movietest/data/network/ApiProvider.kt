@@ -1,13 +1,12 @@
 package droid.maxaria.maxander.movietest.data.network
 
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class ApiProvider() {
+class ApiProvider @Inject constructor() {
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
         .build()
 
     fun movieObject(): MovieApi = retrofit.create(MovieApi::class.java)

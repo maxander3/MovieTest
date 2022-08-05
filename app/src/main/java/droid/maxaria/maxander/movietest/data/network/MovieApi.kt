@@ -1,14 +1,13 @@
 package droid.maxaria.maxander.movietest.data.network
 
-import droid.maxaria.maxander.movietest.data.model.MovieObject
-import retrofit2.Response
+import okhttp3.ResponseBody
 import retrofit2.http.GET
 
 
 interface MovieApi {
 
     @GET(PARAMETERS_URL)
-    suspend fun getMovieList(): Response<MovieObject>
+    suspend fun getMovieList(): ResponseBody
 
     companion object {
         private const val PARAMETERS_URL =
