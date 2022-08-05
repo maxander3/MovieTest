@@ -19,9 +19,11 @@ class MovieListFragment : Fragment() {
     private var _binding: FragmentListBinding? = null
     private val binding: FragmentListBinding
         get() = _binding!!
+
     private val viewModel: MovieListViewModel by viewModels()
 
-    @Inject lateinit var adapter: MovieAdapter
+    @Inject
+    lateinit var adapter: MovieAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,15 +31,19 @@ class MovieListFragment : Fragment() {
     ): View {
         _binding = FragmentListBinding.inflate(inflater)
         adapter.onMovieItemClickListener = {
-            makeAlertDialog(it)
+            makeAlertDialogClickedMovie(it)
         }
         binding.movieRecycler.adapter = adapter
-        observeViewModel()
-        viewModel.loadMovieList()
         return binding.root
     }
 
-    private fun makeAlertDialog(movieName: String) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        observeViewModel()
+        viewModel.loadMovieList()
+    }
+
+    private fun makeAlertDialogClickedMovie(movieName: String) {
         val title = String.format(
             getString(R.string.movie_clicked),
             movieName
@@ -63,6 +69,4 @@ class MovieListFragment : Fragment() {
         _binding = null
         super.onDestroyView()
     }
-
-
 }

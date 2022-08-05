@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="droid.maxaria.maxander.movietest">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MovieApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,8 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieTest"
-        tools:targetApi="31"
-        android:name=".MovieApp">
+        tools:targetApi="31">
         <activity
             android:name=".presenter.MainActivity"
             android:exported="true">

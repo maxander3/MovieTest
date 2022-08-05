@@ -16,5 +16,5 @@ internal fun List<MovieObject.Item>.toDomain(): List<MovieModel> {
     return list
 }
 
-internal fun actorsToString(listActors: List<MovieObject.Item.Actor>): List<String> =
+private fun actorsToString(listActors: List<MovieObject.Item.Actor>): List<String> =
     listActors.map { it.actorName }

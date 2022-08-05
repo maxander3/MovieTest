@@ -12,7 +12,7 @@ import droid.maxaria.maxander.movietest.domain.MovieRepository
 @InstallIn(SingletonComponent::class)
 class DataModule {
     @Provides
-    fun getRepository(apiProvider: ApiProvider):MovieRepository{
-        return  MovieRepositoryImpl(apiProvider)
+    fun getRepository(apiProvider: ApiProvider): MovieRepository {
+        return MovieRepositoryImpl(apiProvider)
     }
 }

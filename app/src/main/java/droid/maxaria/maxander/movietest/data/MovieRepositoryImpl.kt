@@ -14,7 +14,6 @@ class MovieRepositoryImpl @Inject constructor(private val apiProvider: ApiProvid
             val response = Gson().fromJson(
                 apiProvider.movieObject().getMovieList().string(), MovieObject::class.java
             )
-            //TODO изменить некоторые моменты
             val responseList = response.items.apply {
                 for (item in this) {
                     item.actors = item.actors.distinct()

@@ -10,7 +10,8 @@ import droid.maxaria.maxander.movietest.databinding.ItemMovieBinding
 import droid.maxaria.maxander.movietest.domain.model.MovieModel
 import javax.inject.Inject
 
-class MovieAdapter @Inject constructor() : ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieDiffUtil) {
+class MovieAdapter @Inject constructor() :
+    ListAdapter<MovieModel, MovieAdapter.MovieViewHolder>(movieDiffUtil) {
 
     var onMovieItemClickListener: ((String) -> Unit)? = null
 
@@ -24,7 +25,6 @@ class MovieAdapter @Inject constructor() : ListAdapter<MovieModel, MovieAdapter.
         holder.itemView.setOnClickListener {
             onMovieItemClickListener?.invoke(getItem(position).movieName)
         }
-        //TODO обработчик нажатий отредактировать вывод
         holder.apply {
             title.text = getItem(position).movieName
             year.text = String.format(
