@@ -4,5 +4,5 @@ data class MovieModel(
     val actorsOfMovie: List<String>,
     val movieDirectorName: String,
     val movieReleaseYear: Int,
-    val movieName: String
+    val movieName: String,
 )

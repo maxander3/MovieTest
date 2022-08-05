@@ -1,16 +1,24 @@
 package droid.maxaria.maxander.movietest.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class MovieObject(
-    val items: List<Item>
-){
+    @SerializedName("items")
+    val items: List<Item>,
+) {
     data class Item(
-        val actors: List<Actor>,
-        val directorName: String,
+        @SerializedName("actors")
+        var actors: List<Actor>,
+        @SerializedName("directorName")
+        var directorName: String,
+        @SerializedName("releaseYear")
         val releaseYear: Int,
-        val title: String
-    ){
+        @SerializedName("title")
+        val title: String,
+    ) {
         data class Actor(
-            val actorName: String
+            @SerializedName("actorName")
+            val actorName: String,
         )
     }
 }

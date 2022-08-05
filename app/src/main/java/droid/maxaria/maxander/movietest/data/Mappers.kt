@@ -3,9 +3,9 @@ package droid.maxaria.maxander.movietest.data
 import droid.maxaria.maxander.movietest.data.model.MovieObject
 import droid.maxaria.maxander.movietest.domain.model.MovieModel
 
-internal fun MovieObject.toDomain():List<MovieModel>{
+internal fun List<MovieObject.Item>.toDomain(): List<MovieModel> {
     val list = mutableListOf<MovieModel>()
-    for (item in items){
+    for (item in listIterator()) {
         list.add(MovieModel(
             actorsOfMovie = actorsToString(item.actors),
             movieDirectorName = item.directorName,
@@ -15,4 +15,6 @@ internal fun MovieObject.toDomain():List<MovieModel>{
     }
     return list
 }
-internal fun actorsToString(listActors: List<MovieObject.Item.Actor>):List<String> =  listActors.map { it.actorName }
+
+private fun actorsToString(listActors: List<MovieObject.Item.Actor>): List<String> =
+    listActors.map { it.actorName }
