@@ -6,4 +6,5 @@
     <string name="movie_year">( %s )</string>
     <string name="director_name">Режиссёр: %s</string>
     <string name="actors_name">Снимались: %s.</string>
+    <string name="click_again">Нажмите ещё раз чтобы выйти</string>
 </resources>

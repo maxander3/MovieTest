@@ -8,7 +8,7 @@
         android:id="@+id/movieListFragment"
         android:name="droid.maxaria.maxander.movietest.presenter.movielist.MovieListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_movieListFragment_to_errorFragment"
             app:destination="@id/errorFragment" />
@@ -17,7 +17,7 @@
         android:id="@+id/errorFragment"
         android:name="droid.maxaria.maxander.movietest.presenter.ErrorFragment"
         android:label="fragment_error"
-        tools:layout="@layout/fragment_error" >
+        tools:layout="@layout/fragment_error">
         <action
             android:id="@+id/action_errorFragment_to_movieListFragment"
             app:destination="@id/movieListFragment" />
