@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GoodProject/MovieTest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1985" />
+        <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout-v28/fragment_error.xml" value="0.2234375" />
         <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout/activity_main.xml" value="0.2178649237472767" />
         <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout/fragment_error.xml" value="0.2234375" />
         <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout/fragment_list.xml" value="0.17592592592592593" />
-        <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout/item_movie.xml" value="0.140625" />
+        <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout/item_movie.xml" value="0.2" />
         <entry key="..\:/GoodProject/MovieTest/app/src/main/res/layout/movie_card.xml" value="0.2234375" />
       </map>
     </option>

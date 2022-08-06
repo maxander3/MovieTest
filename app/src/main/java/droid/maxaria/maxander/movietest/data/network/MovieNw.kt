@@ -1,8 +1,8 @@
-package droid.maxaria.maxander.movietest.data.model
+package droid.maxaria.maxander.movietest.data.network
 
 import com.google.gson.annotations.SerializedName
 
-data class MovieObject(
+data class MovieNw(
     @SerializedName("items")
     val items: List<Item>,
 ) {

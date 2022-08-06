@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">MovieTest</string>
     <string name="check_internet_connecting">Check your internet connecting</string>
-    <string name="retry">Retry</string>
+    <string name="retry">Повторить</string>
     <string name="movie_clicked">Фильм %s был нажат</string>
     <string name="movie_year">( %s )</string>
     <string name="director_name">Режиссёр: %s</string>
     <string name="actors_name">Снимались: %s.</string>
+    <string name="click_again">Нажмите ещё раз чтобы выйти</string>
 </resources>
