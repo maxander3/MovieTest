@@ -25,47 +25,39 @@
 
             <TextView
                 android:id="@+id/movie_title_tv"
-                style="@style/Widget.MaterialComponents.TextView"
+                style="@style/movie_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:autoSizeTextType="uniform"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 tools:text="Андрей Рублев" />
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="match_parent"/>
 
             <TextView
                 android:id="@+id/movie_year_tv"
-                style="@style/Widget.MaterialComponents.TextView"
+                style="@style/year_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:includeFontPadding="false"
-                android:textColor="@color/black"
-                android:textSize="16sp"
                 tools:text="(1966)" />
         </LinearLayout>
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
         <TextView
             android:id="@+id/director_name_tv"
-            style="@style/Widget.MaterialComponents.TextView"
+            style="@style/director_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:includeFontPadding="false"
-            android:textSize="16sp"
             tools:text="@string/director_name" />
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
         <TextView
             android:id="@+id/actors_name_tv"
-            style="@style/Widget.MaterialComponents.TextView"
+            style="@style/actors_name_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:includeFontPadding="false"
-            android:textSize="14sp"
             tools:text="@string/actors_name" />
     </LinearLayout>
 
