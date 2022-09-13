@@ -28,7 +28,7 @@ class MovieRepositoryImpl @Inject constructor(private val apiProvider: ApiProvid
     }
 
     override suspend fun sortMovieListByYear(movieList: List<Movie>): List<Movie> {
-        return movieList.sortedBy { it.movieReleaseYear }.reversed()
+        return movieList.sortedByDescending { it.movieReleaseYear }
     }
 
     private fun parseDirectorNameToSurnameInitials(directorName: String): String {
