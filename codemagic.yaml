@@ -7,7 +7,7 @@ workflows:
       android_signing:
         - Lol
       vars:
-        PACKAGE_NAME: "io.codemagic.sample.androidnative"
+        PACKAGE_NAME: "droid.maxaria.maxander.movietest"
     scripts:
       - name: Set Android SDK location
         script: |
