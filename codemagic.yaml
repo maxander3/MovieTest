@@ -6,8 +6,6 @@ workflows:
     environment:
       android_signing:
         - Lol
-      groups:
-        - google_play
       vars:
         PACKAGE_NAME: "droid.maxaria.maxander.movietest"
     scripts:
