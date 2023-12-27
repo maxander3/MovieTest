@@ -18,7 +18,7 @@ workflows:
       - name: Build Android release
         script: |
           ./gradlew assembleRelease
-          codemagic.keystore 
+          Lol 
 
     artifacts:
       - app/build/outputs/**/*.apk
